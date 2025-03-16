@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organic Food</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="images/farm11.jpg" class="logo-img" alt="Logo">
+            <span>Organic Food</span>
+        </div>
+        <nav class="nav" id="nav">
+            <a href="#" id="homeLink">Home</a>
+            <a href="#aboutUs" id="aboutUsLink">About Us</a>
+            <a href="#">Shop</a>
+            <a href="#">Order</a>
+            <a href="contact.html" id="contactUsLink">Contact Us</a>
+        </nav>
+        <div class="icons">
+            <input type="text" placeholder="Search product..." class="search-bar">
+            <span class="icon">❤</span>
+            <span class="icon">🛒</span>
+            <span class="icon person-icon" id="userIcon">👤</span>
+        </div>
+    </header>
+    <div class="banner" id="banners">
+        <img src="images/farm21.jpeg" alt="Image 1">
+        <img src="images/farm31.jpeg" alt="Image 2">
+        <img src="images/farm41.jpeg" alt="Image 3">
+    </div>
+    <div class="modal" id="userModal">
+        <div class="modal-content">
+            <div id="loginForm" class="form-container">
+                <h2>Login</h2>
+                <form action="loginn.php" method="POST">
+                    <input type="text" placeholder="Username" class="input-field" name="username" required><br><br>
+                    <input type="password" placeholder="Password" class="input-field" name="password" required><br><br>
+                    
+                    <button class="modal-btn" type="submit">Login</button>
+                    <p>Don't have an account? <span class="switch-form" id="showRegister">Sign Up</span></p>
+                </form>
+            </div>
+            <div id="registerForm" class="form-container" style="display: none;">
+                <h2>Sign Up</h2>
+                <form action="registerr.php" method="POST">
+                    <input type="text" placeholder="Username" class="input-field" name="username" required><br><br>
+                    <input type="email" placeholder="Email" class="input-field" name="email" required><br><br>
+                    <input type="password" placeholder="Password" class="input-field" name="password" required><br><br>
+                    <input type="password" placeholder="Confirm Password" class="input-field" name="confirm_password" required><br><br>
+                    <input type="number" placeholder="Number" class="input-field" name="Number" required><br><br>
+                    <button class="modal-btn" type="submit">Register</button>
+                    <p>Already have an account? <span class="switch-form" id="showLogin">Login</span></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <center><div class = "head-design"><h4>ABOUT US</h4></center>
+    <div id="aboutus" class="about-us" style="display: none;">
+        <div>
+            <h3>Our Mission</h3>
+            <p>Connecting farmers directly to consumers for fresh produce.</p>
+        </div>
+        <div>
+            <h3>Our Vision</h3>
+            <p>Making organic food accessible and affordable for everyone.</p>
+        </div>
+        <div>
+            <h3>Our Values</h3>
+            <p>Ensuring fair profits for farmers while maintaining quality.</p>
+        </div>
+        <div>
+            <h3>Why Choose Us?</h3>
+            <p>Fresh produce, straight from the farm to your table.</p>
+        </div>
+    </div>
+     <center><h5>VIRTUAL FARM VISIT</h5>
+     <div class="gallery">
+    <img src="images/farm51.jpeg" alt="Image 1" onclick="openModal(this)">
+    <img src="images/farm52.jpeg" alt="Image 2" onclick="openModal(this)">
+    <img src="images/farm53.jpeg" alt="Image 3" onclick="openModal(this)">
+    <img src="images/farm54.jpeg" alt="Image 4" onclick="openModal(this)">
+  </div>
+
+  <!-- Modal -->
+  <div id="imageModal" class="modall">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modalImage" src="" alt="">
+  </div>
+  
+  <script>
+    function openModal(image) {
+      const modal = document.getElementById('imageModal');
+      const modalImage = document.getElementById('modalImage');
+      modalImage.src = image.src;
+      modal.style.display = 'flex';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('imageModal');
+      modal.style.display = 'none';
+    }
+  </script>
+
+    <script src="scriptt.js"></script>
+</body>
+</html>
